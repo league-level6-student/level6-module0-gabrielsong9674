@@ -36,13 +36,18 @@ public class CatFactsApi {
         Use WebClient to make the request, converting the response to String.class.
         This request doesn't require url parameters, so you can omit the .uri() method call entirely
         */
-
+    	String response = webClient
+                .get()
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
 
 
         /*
         Print out the actual JSON response -
         this is what you would input into jsonschema2pojo.com
          */
+        System.out.println(response);
 
 
         /*
