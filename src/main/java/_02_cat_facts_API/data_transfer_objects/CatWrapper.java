@@ -1,32 +1,36 @@
+
 package _02_cat_facts_API.data_transfer_objects;
 
+import java.util.Properties;
+
+import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
+@Generated("jsonschema2pojo")
 public class CatWrapper {
 
-    @SerializedName("data")
+    @SerializedName("type")
     @Expose
-    private List<String> data = null;
+    private String type;
+    @SerializedName("properties")
+    @Expose
+    private Properties properties;
 
-    public List<String> getData() {
-        return data;
+    public String getType() {
+        return type;
     }
 
-    public void setData(List<String> data) {
-        this.data = data;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    /*
-    This class could simply be defined as below, but the above code is what is supplied by jsonschema2pojo.com:
-
-    private List<String> data = null;
-
-    public List<String> getData() {
-        return data;
+    public Properties getProperties() {
+        return properties;
     }
-    */
+
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
 
 }
