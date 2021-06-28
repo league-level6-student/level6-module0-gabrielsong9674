@@ -16,19 +16,30 @@ import static org.mockito.Mockito.*;
 class MyDonutShopTest {
 
     MyDonutShop myDonutShop;
+    
+    @Mock
+    PaymentService paymentService;
+    
+    @Mock
+    BakeryService bakeryService;
+    
+    @Mock
+    DeliveryService deliveryService;
 
     @BeforeEach
     void setUp() {
-
+    	myDonutShop = new MyDonutShop(paymentService, deliveryService, bakeryService);
     }
 
     @Test
     void itShouldTakeDeliveryOrder() throws Exception {
         //given
-
+    	myDonutShop.openForTheDay();
+    	Order order = new Order("Grace", "1234567890", 12, 20, "123", false);
         //when
-
+    	myDonutShop.takeOrder(order);
         //then
+        verify(myDonutShop, times(2)).takeOrder(order);
     }
 
     @Test

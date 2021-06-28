@@ -30,7 +30,7 @@ class CarTest {
     @Test
     void itShouldStart() {
         //given
-        boolean expectedStart = true;
+        boolean expectedStart = false;
         //The following line stubs the engine.start() method, so that it will return true when it is invoked
         when(engine.start()).thenReturn(true);
 
