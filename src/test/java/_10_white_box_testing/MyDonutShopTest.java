@@ -50,9 +50,9 @@ class MyDonutShopTest {
                 5.00,
                 "CreditCard",
                 true);
-        //when
     	when(paymentService.charge(order)).thenReturn(true);
-    	when(bakeryService.getDonutsRemaining()).thenReturn(1);
+
+        //when
     	
     	myDonutShop.openForTheDay();
     	myDonutShop.takeOrder(order);
